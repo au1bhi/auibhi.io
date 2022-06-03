@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+    function calc() {
+        var oper1=document.getElementById("num1");
+		var temp;
+		var res;
+        temp=change(oper1.value)
+		res=Math.acos(temp/200)*180/Math.PI
+        document.getElementById("anw").value=res;
+    }
+    function change(x) {
+        return parseFloat(x);
+    }
+</script>
+</head>
+<body>
+<form action="">
+<input type="text" id="num1" placeholder="距离（小于200km）">
+<input type="text" placeholder="启用跳刀的角度" id="anw">
+<input type="button" value="计算" onclick="calc()">
+</form>
+</body>
+</html>
