@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>B206</title>
+    <style>
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo" src="https://mp-5fe2d1bf-2167-4211-b707-26e111a0040c.cdn.bspapp.com/11月15日(1).mp4" autoplay></video>
+
+    <script>
+        var video = document.getElementById("myVideo");
+
+        video.addEventListener("canplay", function() {
+            video.play();
+
+            // 检测浏览器是否支持全屏功能
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
